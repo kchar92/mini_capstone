@@ -1,0 +1,7 @@
+@items.map do |item|
+  {
+    NAME: item.name,
+    PRICE: item.price,
+    DESCRIPTION: item.description
+  }
+end
