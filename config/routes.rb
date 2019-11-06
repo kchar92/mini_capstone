@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/all_items" => "items#every_item"
+    get "/snowboard" => "items#snowboard"
+    get "/bicycle" => "items#bicycle"
+    get "/skateboard" => "items#skateboard"
   end
 end
