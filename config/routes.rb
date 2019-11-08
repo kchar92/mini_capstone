@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get '/items' => 'items#index'
+    # show
+    get '/items/:id' => 'items#show'
   end
 end
