@@ -11,5 +11,8 @@ Rails.application.routes.draw do
     get '/items' => 'items#index'
     # show
     get '/items/:id' => 'items#show'
+
+    # create
+    post '/items' => 'items#create'
   end
 end
