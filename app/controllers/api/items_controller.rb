@@ -22,4 +22,18 @@ class Api::ItemsController < ApplicationController
     render 'one_item.json.jb'
   end
 
+  def update
+    # combination of show and create, kind of
+    item_id = params[:id]
+    @item = Item.find_by(id: item_id)
+
+    @item.name = params[:input_name]
+    @item.price = params[:input_price]
+    @item.description = params[:input_description]
+    @item.image_url = params[:input_image_url]
+    @item.save
+
+    render 'one_item.json.jb'
+  end
+
 end
