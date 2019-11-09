@@ -8,7 +8,7 @@ class Api::ItemsController < ApplicationController
   def show
     item_id = params[:id]
     @item = Item.find_by(id: item_id)
-    render 'one_item.json.jb'
+    render 'item.json.jb'
   end
 
   def create
@@ -19,7 +19,7 @@ class Api::ItemsController < ApplicationController
         image_url: params[:input_image_url]
       )
     @item.save
-    render 'one_item.json.jb'
+    render 'item.json.jb'
   end
 
   def update
@@ -33,7 +33,15 @@ class Api::ItemsController < ApplicationController
     @item.image_url = params[:input_image_url]
     @item.save
 
-    render 'one_item.json.jb'
+    render 'item.json.jb'
+  end
+
+  def destroy
+    #find item
+    @item = Item.find_by(id: params[:id])
+    #destroy 
+    @item.destroy
+    render 'destory.json.jb'
   end
 
 end

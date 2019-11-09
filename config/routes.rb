@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
     # update STILL WORKING ON THIS
     patch '/items/:id' => 'items#update'
+
+    delete '/items/:id' => 'items#destroy'
   end
 end
