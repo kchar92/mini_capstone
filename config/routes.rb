@@ -17,9 +17,10 @@ Rails.application.routes.draw do
     # create
     post '/items' => 'items#create'
 
-    # update STILL WORKING ON THIS
+    # update
     patch '/items/:id' => 'items#update'
 
+    # destroy
     delete '/items/:id' => 'items#destroy'
   end
 end
