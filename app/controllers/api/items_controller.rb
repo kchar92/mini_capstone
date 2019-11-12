@@ -1,5 +1,4 @@
 class Api::ItemsController < ApplicationController
-
   def index
     @items = Item.all
     render 'index.json.jb'
@@ -23,7 +22,6 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-
     item_id = params[:id]
     @item = Item.find_by(id: item_id)
 
@@ -43,5 +41,4 @@ class Api::ItemsController < ApplicationController
     @item.destroy
     render 'destory.json.jb'
   end
-
 end

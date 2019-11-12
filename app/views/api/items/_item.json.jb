@@ -1,0 +1,10 @@
+{
+  id: item.id,
+  name: item.name,
+  price: item.price,
+  tax: item.tax,
+  total: item.total,
+  discounted?: item.is_discounted?,
+  description: item.description,
+  image_url: item.image_url
+}
