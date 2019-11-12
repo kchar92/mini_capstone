@@ -6,4 +6,8 @@ class Item < ApplicationRecord
       p "false"
     end
   end
+
+  def tax
+    price + (price.to_i * 0.09)
+  end
 end
