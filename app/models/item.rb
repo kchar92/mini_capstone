@@ -1,4 +1,9 @@
 class Item < ApplicationRecord
+
+  validates :name, uniqueness: true
+  validates :description, length: {maximum: 10}
+  validates :price, numericality: {less_than_or_equal_to: 100, greater_than_or_equal_to: 1}
+
   def is_discounted?
     if price < 10
       p true
