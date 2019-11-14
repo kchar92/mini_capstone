@@ -17,8 +17,11 @@ class Api::ItemsController < ApplicationController
         description: params[:description],
         image_url: params[:image_url]
       )
-    @item.save
-    render 'item.json.jb'
+    if @item.save
+      render 'item.json.jb'
+    else
+      render json: {errors: @item.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,9 +32,11 @@ class Api::ItemsController < ApplicationController
     @item.price = params[:price] || @item.price
     @item.description = params[:description] || @item.description
     @item.image_url = params[:image_url] || @item.image_url
-    @item.save
-
-    render 'item.json.jb'
+    if @item.save
+      render 'item.json.jb'
+    else
+      render json: {errors: @item.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
