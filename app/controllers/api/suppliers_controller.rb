@@ -9,4 +9,14 @@ class Api::SuppliersController < ApplicationController
     @supplier = Supplier.find_by(id: supplier_id)
     render 'show.json.jb'
   end
+
+  def create
+    @supplier = Supplier.new(
+      name: params[:name],
+      phone_number: params[:phone_number],
+      email: params[:email]
+      )
+    @supplier.save
+    render 'show.json.jb'
+  end
 end
