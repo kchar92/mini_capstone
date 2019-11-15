@@ -24,5 +24,7 @@ Rails.application.routes.draw do
     delete '/items/:id' => 'items#destroy'
 
     get '/suppliers' => 'suppliers#index'
+
+    get '/suppliers/:id' => 'suppliers#show'
   end
 end
