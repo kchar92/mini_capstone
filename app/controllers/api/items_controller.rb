@@ -1,6 +1,14 @@
 class Api::ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.where("name LIKE ?", "%#{params[:search]}%")
+    @items = @items.where("price < ?", 200)
+    if params[:sort] == 'price' && params[:sort_order] == 'desc'
+      @items = @items.order(price: :desc)
+    elsif 
+      @items = @items.order(price: :asc)
+    else
+      @items = @items.order(:id)
+    end
     render 'index.json.jb'
   end
 
@@ -40,9 +48,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def destroy
-    #find item
     @item = Item.find_by(id: params[:id])
-    #destroy 
     @item.destroy
     render 'destory.json.jb'
   end
