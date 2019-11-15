@@ -28,4 +28,10 @@ class Api::SuppliersController < ApplicationController
     @supplier.save
     render 'show.json.jb'
   end
+
+  def destroy
+    @supplier = Supplier.find_by(id: params[:id])
+    @supplier.destroy
+    render 'destroy.json.jb'
+  end
 end
