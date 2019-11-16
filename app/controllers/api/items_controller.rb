@@ -1,11 +1,17 @@
 class Api::ItemsController < ApplicationController
   def index
-    @items = Item.where("name LIKE ?", "%#{params[:search]}%")
-    @items = @items.where("price < ?", 200)
-    if params[:sort] == 'price' && params[:sort_order] == 'desc'
-      @items = @items.order(price: :desc)
-    elsif 
-      @items = @items.order(price: :asc)
+    if params[:search]
+      @items = Item.where("name LIKE ?", "%#{params[:search]}%")
+    else
+      @items = Item.all
+    end
+
+    if params[:discount] == 'true'
+      @items = @items.where("price <= ?", 150)
+    end
+
+    if params[:sort] && params[:sort_order]
+      @items = @items.order(params[:sort] => params[:sort_order])
     else
       @items = @items.order(:id)
     end

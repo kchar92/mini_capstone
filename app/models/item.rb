@@ -2,10 +2,10 @@ class Item < ApplicationRecord
 
   validates :name, uniqueness: true
   validates :description, length: {minimum: 10}
-  validates :price, numericality: {less_than_or_equal_to: 800, greater_than_or_equal_to: 1}
+  validates :price, numericality: {less_than_or_equal_to: 5000, greater_than_or_equal_to: 1}
 
   def is_discounted?
-    if price < 10
+    if price <= 150
       p true
     else
       p false
@@ -18,6 +18,6 @@ class Item < ApplicationRecord
   end
 
   def total
-    price + 1.09
+    price * 1.09
   end
 end
