@@ -4,6 +4,10 @@ class Item < ApplicationRecord
   validates :description, length: {minimum: 10}
   validates :price, numericality: {less_than_or_equal_to: 5000, greater_than_or_equal_to: 1}
 
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
   def is_discounted?
     if price <= 150
       p true
