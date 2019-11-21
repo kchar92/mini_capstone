@@ -1,4 +1,6 @@
 class Api::ItemsController < ApplicationController
+  before_action :authenticate_admin, only: [:create, :update, :destroy]
+  
   def index
     if current_user
       @items = Item.all
