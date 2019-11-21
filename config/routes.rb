@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     # destroy
     delete '/items/:id' => 'items#destroy'
 
+    #suppliers
+
     get '/suppliers' => 'suppliers#index'
 
     get '/suppliers/:id' => 'suppliers#show'
@@ -33,10 +35,18 @@ Rails.application.routes.draw do
 
     delete '/suppliers/:id' => 'suppliers#destroy'
 
-    post "/users" => "users#create"
+    # authentication
 
-    post "/sessions" => "sessions#create"
+    post '/users' => 'users#create'
 
-    post '/orders' => "orders#create"
+    post '/sessions' => 'sessions#create'
+
+    #orders
+
+    post '/orders' => 'orders#create'
+
+    get '/orders' => 'orders#index'
+
+
   end
 end
