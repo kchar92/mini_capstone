@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   has_many :orders
   has_many :images
   belongs_to :supplier
+  has_many :item_categories
+  has_many :categories, through: :item_categories
 
   validates :name, uniqueness: true
   validates :description, length: {minimum: 10}
