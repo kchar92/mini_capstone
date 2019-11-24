@@ -8,6 +8,7 @@ class Api::ItemsController < ApplicationController
     else
       render json: []
     end
+
     # if params[:search]
     #   @items = Item.where("name LIKE ?", "%#{params[:search]}%")
     # else
