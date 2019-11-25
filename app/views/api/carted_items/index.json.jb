@@ -1,0 +1,5 @@
+@carted_items.map do |carted_item|
+  {
+    user_id: carted_item.user_id #stopped here
+  }
+end
