@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 
     # carted items
 
+    get 'carted_items' => 'carted_items#index'
+
     post 'carted_items' => 'carted_items#create'
 
 
