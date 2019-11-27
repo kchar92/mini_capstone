@@ -55,4 +55,6 @@ Rails.application.routes.draw do
 
 
   end
+
+  get "/items/:id" => "items#show"
 end
