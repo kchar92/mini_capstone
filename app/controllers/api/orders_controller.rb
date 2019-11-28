@@ -20,7 +20,7 @@ class Api::OrdersController < ApplicationController
       tax: 2.50,
       total: 52.50
     )
-    @order.save!
+    @order.save
     render 'show.json.jb'
   end
 end

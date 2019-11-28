@@ -4,7 +4,6 @@ class Item < ApplicationRecord
   belongs_to :supplier
   has_many :item_categories
   has_many :categories, through: :item_categories
-  has_many :orders, through: :carted_items 
   has_many :carted_items
 
   # validates :name, uniqueness: true
