@@ -20,4 +20,17 @@ class ItemsController < ApplicationController
     @item.save
     redirect_to "/items/#{@item.id}"
   end
+  def edit
+    @item = Item.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+  def update
+    @item = Item.find_by(id: params[:id])
+    @item.name = params[:name]
+    @item.description = params[:description]
+    @item.price = params[:price]
+    @item.supplier.name = params[:supplier]
+    @item.save
+    redirect_to "/items/#{@item.id}"
+  end
 end
