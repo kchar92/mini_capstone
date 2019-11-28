@@ -26,11 +26,16 @@ class ItemsController < ApplicationController
   end
   def update
     @item = Item.find_by(id: params[:id])
-    @item.name = params[:name]
+    @item.name = params[:item_name]
     @item.description = params[:description]
     @item.price = params[:price]
     @item.supplier.name = params[:supplier]
     @item.save
     redirect_to "/items/#{@item.id}"
+  end
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
+    redirect_to "/items"
   end
 end

@@ -2,3 +2,5 @@
 <p>name: <%= @item.name %></p>
 <p>description: <%= @item.description %></p>
 <p>price: <%= @item.price %></p>
+
+<a href="/items/<%= @item.id %>" data-method="delete">Delete Item</a>
