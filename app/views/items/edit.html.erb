@@ -3,7 +3,7 @@
   <p>item name: <input type="text" name="item_name" value="<%= @item.name %>"></p>
   <p>description: <input type="text" name="description" value="<%= @item.description %>"></p>
   <p>price: <input type="text" name="price" value="<%= @item.price.to_s %>"></p>
-  <p>supplier: <input type="text" name="supplier" value="<%= @item.supplier.name %>"></p>
+  <p>supplier_id: <input type="number" name="supplier" value="<%= @item.supplier.name %>"></p>
 
   <input type="submit" value="update item">
 </form>
