@@ -2,13 +2,14 @@ class Api::ItemsController < ApplicationController
   before_action :authenticate_admin, only: [:create, :update, :destroy]
   
   def index
-    if current_user
-      @items = Item.all
-      render 'index.json.jb'
-    else
-      render json: []
-    end
-
+    # if current_user
+    #   @items = Item.all
+    #   render 'index.json.jb'
+    # else
+    #   render json: []
+    # end
+    @items = Item.all
+    render 'index.json.jb'
     # if params[:search]
     #   @items = Item.where("name LIKE ?", "%#{params[:search]}%")
     # else
