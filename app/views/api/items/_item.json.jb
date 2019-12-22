@@ -2,10 +2,10 @@
   id: item.id,
   name: item.name,
   price: item.price,
-  tax: item.tax,
-  total: item.total,
-  discounted?: item.is_discounted?,
+  # tax: item.tax,
+  # total: item.total,
+  # discounted?: item.is_discounted?,
   description: item.description,
-  image: item.images,
-  supplier: item.supplier.name
+  selected: false
+  # supplier: item.supplier.name
 }
